@@ -1,0 +1,130 @@
+/*
+ * @Author: weicong
+ * @LastEditors: cola
+ * @Description:
+ * @Date: 2022-03-20 11:32:20
+ * @LastEditTime: 2022-03-23 01:05:39
+ */
+module.exports = {
+  defaultSeverity: "error",
+  plugins: ["stylelint-order", "stylelint-prettier"],
+  extends: [
+    "stylelint-config-standard",
+    "stylelint-config-prettier",
+    "stylelint-config-standard-scss",
+    "stylelint-config-recommended-vue",
+    "stylelint-config-recommended-vue/scss",
+  ],
+  rules: {
+    "prettier/prettier": true,
+    "selector-class-pattern": [
+      // 命名规范 -
+      "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+      {
+        message: "Expected class selector to be kebab-case",
+      },
+    ],
+    "no-invalid-position-at-import-rule": null,
+    "at-rule-empty-line-before": null,
+    "scss/at-import-partial-extension": null, // @import不包括扩展名
+    "at-rule-name-case": "lower", // 指定@规则名的大小写
+    "length-zero-no-unit": true, // 禁止零长度的单位（可自动修复）
+    "shorthand-property-no-redundant-values": true, // 简写属性
+    "number-leading-zero": "never", // 小数不带0
+    "declaration-block-no-duplicate-properties": true, // 禁止声明快重复属性
+    "no-descending-specificity": true, // 禁止在具有较高优先级的选择器后出现被其覆盖的较低优先级的选择器。
+    "max-nesting-depth": 3,
+    indentation: [
+      2,
+      {
+        // 指定缩进  warning 提醒
+        severity: "warning",
+      },
+    ],
+    "at-rule-no-unknown": null,
+    "scss/at-rule-no-unknown": null,
+    "custom-property-no-missing-var-function": true,
+    "function-no-unknown": true,
+    "color-no-invalid-hex": true,
+    "unit-no-unknown": true,
+    "order/order": ["custom-properties", "declarations"],
+    "order/properties-order": [
+      "position",
+      "top",
+      "right",
+      "bottom",
+      "left",
+      "z-index",
+      "display",
+      "justify-content",
+      "align-items",
+      "float",
+      "clear",
+      "overflow",
+      "overflow-x",
+      "overflow-y",
+      "margin",
+      "margin-top",
+      "margin-right",
+      "margin-bottom",
+      "margin-left",
+      "border",
+      "border-style",
+      "border-width",
+      "border-color",
+      "border-top",
+      "border-top-style",
+      "border-top-width",
+      "border-top-color",
+      "border-right",
+      "border-right-style",
+      "border-right-width",
+      "border-right-color",
+      "border-bottom",
+      "border-bottom-style",
+      "border-bottom-width",
+      "border-bottom-color",
+      "border-left",
+      "border-left-style",
+      "border-left-width",
+      "border-left-color",
+      "border-radius",
+      "padding",
+      "padding-top",
+      "padding-right",
+      "padding-bottom",
+      "padding-left",
+      "width",
+      "min-width",
+      "max-width",
+      "height",
+      "min-height",
+      "max-height",
+      "font-size",
+      "font-family",
+      "font-weight",
+      "text-align",
+      "text-justify",
+      "text-indent",
+      "text-overflow",
+      "text-decoration",
+      "white-space",
+      "color",
+      "background",
+      "background-position",
+      "background-repeat",
+      "background-size",
+      "background-color",
+      "background-clip",
+      "opacity",
+      "filter",
+      "list-style",
+      "outline",
+      "visibility",
+      "box-shadow",
+      "text-shadow",
+      "resize",
+      "transition",
+    ],
+  },
+};
